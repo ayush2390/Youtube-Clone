@@ -5,19 +5,29 @@ import { Link } from 'react-router-dom';
 import { demoProfilePicture } from '../utils/constants';
 
 const ChannelCard = ({ channelDetail, marginTop }) => (
-  <Box
-    sx={{
-      boxShadow: 'none',
-      borderRadius: '20px',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: { xs: '356px', md: '320px' },
-      height: '326px',
-      margin: 'auto',
-      marginTop
-    }}
-  >
+<Box
+  sx={{
+    boxShadow: '0 8px 16px rgba(0, 0, 0, 0.1)', // Adding a soft shadow for depth
+    borderRadius: '20px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: { xs: '356px', md: '320px' },
+    height: '326px',
+    margin: 'auto',
+    marginTop: '20px', // Example marginTop, you can adjust this as needed
+    backgroundColor: 'white', // Background color for the Box
+    border: '1px solid #e0e0e0', // Light border for definition
+    padding: '20px', // Adding padding inside the box
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease', // Smooth transition for hover effects
+    '&:hover': {
+      transform: 'scale(1.05)', // Slight zoom effect on hover
+      boxShadow: '0 12px 24px rgba(0, 0, 0, 0.15)', // Darker shadow on hover
+    },
+    boxSizing: 'border-box', // Ensure padding doesn't affect overall dimensions
+  }}
+>
+
     <Link to={`/channel/${channelDetail?.id?.channelId}`}>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', color: '#fff' }}>
         <CardMedia
